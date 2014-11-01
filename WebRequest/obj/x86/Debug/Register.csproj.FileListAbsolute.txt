@@ -1,0 +1,11 @@
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\WebRequest.exe
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\WebRequest.pdb
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\bin\Debug\WebRequest.exe
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\bin\Debug\WebRequest.pdb
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\bin\Debug\log4net.dll
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\bin\Debug\log4net.xml
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\XXX.Main.resources
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\XXX.Properties.Resources.resources
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\GenerateResource.write.1.tlog

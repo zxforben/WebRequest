@@ -34,6 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\Lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\Lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\Lib\AForge.Math.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\log4net.2.0.3\lib\net40-client\log4net.dll</HintPath>
     </Reference>
@@ -52,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="LogHelper.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +74,7 @@
     <Compile Include="Net\HttpResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomPassword.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="UnCodebase.cs" />
     <EmbeddedResource Include="Main.resx">
@@ -79,6 +90,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +100,65 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\3 %282%29.jpg" />
+    <Content Include="Template\3 %283%29.jpg" />
+    <Content Include="Template\3 %284%29.jpg" />
+    <Content Include="Template\3 %285%29.jpg" />
+    <Content Include="Template\3 %286%29.jpg" />
+    <Content Include="Template\4 %282%29.jpg" />
+    <Content Include="Template\4 %283%29.jpg" />
+    <Content Include="Template\4 %284%29.jpg" />
+    <Content Include="Template\4 %285%29.jpg" />
+    <Content Include="Template\4 %286%29.jpg" />
+    <Content Include="Template\4 %287%29.jpg" />
+    <Content Include="Template\5 %282%29.jpg" />
+    <Content Include="Template\5 %283%29.jpg" />
+    <Content Include="Template\5 %284%29.jpg" />
+    <Content Include="Template\5 %285%29.jpg" />
+    <Content Include="Template\5 %286%29.jpg" />
+    <Content Include="Template\5 %287%29.jpg" />
+    <Content Include="Template\5 %288%29.jpg" />
+    <Content Include="Template\6 %2810%29.jpg" />
+    <Content Include="Template\6 %282%29.jpg" />
+    <Content Include="Template\6 %283%29.jpg" />
+    <Content Include="Template\6 %284%29.jpg" />
+    <Content Include="Template\6 %285%29.jpg" />
+    <Content Include="Template\6 %286%29.jpg" />
+    <Content Include="Template\6 %287%29.jpg" />
+    <Content Include="Template\6 %288%29.jpg" />
+    <Content Include="Template\6 %289%29.jpg" />
+    <Content Include="Template\7 %282%29.jpg" />
+    <Content Include="Template\7 %283%29.jpg" />
+    <Content Include="Template\7 %284%29.jpg" />
+    <Content Include="Template\7 %285%29.jpg" />
+    <Content Include="Template\7 %286%29.jpg" />
+    <Content Include="Template\7 %287%29.jpg" />
+    <Content Include="Template\8 %282%29.jpg" />
+    <Content Include="Template\8 %283%29.jpg" />
+    <Content Include="Template\8 %284%29.jpg" />
+    <Content Include="Template\8 %285%29.jpg" />
+    <Content Include="Template\8 %286%29.jpg" />
+    <Content Include="Template\8 %287%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,3 +9,20 @@ d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\XXX
 d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\XXX.Properties.Resources.resources
 d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\GenerateResource.read.1.tlog
 d:\documents\visual studio 2010\Projects\WebRequest\WebRequest\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\WebRequest.exe
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\WebRequest.pdb
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\WebRequest.exe
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\WebRequest.pdb
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\log4net.dll
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\log4net.xml
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\Register.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\XXX.Main.resources
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\XXX.Properties.Resources.resources
+D:\Documents\GitHub\WebRequest\WebRequest\obj\x86\Debug\Register.csproj.GenerateResource.Cache
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.dll
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.Imaging.dll
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.Math.dll
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.xml
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.Imaging.xml
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\AForge.Math.xml
+D:\Documents\GitHub\WebRequest\WebRequest\bin\Debug\WebRequest.exe.config

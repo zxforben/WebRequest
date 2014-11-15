@@ -5,6 +5,10 @@ using System.Text;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Collections;
+using AForge.Imaging.Filters;
+using AForge.Imaging;
+using AForge.Math.Random;
+using AForge;
 
 namespace XXX
 {
@@ -31,7 +35,7 @@ namespace XXX
         public static string GetStrFromBmp(string fileName)
         {
 
-            Bitmap bmp = new Bitmap(Image.FromFile(fileName));
+            Bitmap bmp = new Bitmap(System.Drawing.Image.FromFile(fileName));
 
             string recordString=string.Empty;
 
@@ -87,7 +91,7 @@ namespace XXX
 
             for (int i = 0; i < 10; i++)
             {
-                sNumArr[i] = new Bitmap(@"s" + i + ".bmp");
+                sNumArr[i] = new Bitmap(@"img/s" + i + ".bmp");
             }
 
             //分割出来的4个数字分别与等宽的标准数字相匹配  
@@ -133,26 +137,332 @@ namespace XXX
 
         public static string imageVerify(string filename)
         {
-            UnCodebase un = new UnCodebase(new Bitmap(Image.FromFile(filename)));
-            un.bmpobj = un.GetPicValidByValue(un.bmpobj, 128);
+           // Bitmap bm = new Bitmap(filename);
+            Bitmap bm = AForge.Imaging.Image.FromFile(filename);
 
- 
+            FiltersSequence commonSeq = new FiltersSequence();
+            //// create filter
+            //AdaptiveSmoothing filter = new AdaptiveSmoothing();
+            //// apply the filter
+            // filter.ApplyInPlace(bm);
 
+             //// create random generator
+             //IRandomNumberGenerator generator = new UniformGenerator(new Range(-50, 50));
+             //// create filter
+             //AdditiveNoise filter = new AdditiveNoise(generator);
+             //// apply the filter
+             //filter.ApplyInPlace(bm);
+
+            // create filter
+            //BilateralSmoothing filter = new BilateralSmoothing();
+            //filter.KernelSize = 7;
+            //filter.SpatialFactor = 10;
+            //filter.ColorFactor = 60;
+            //filter.ColorPower = 0.5;
+            //// apply the filter
+            //filter.ApplyInPlace(bm);
+
+            //// create filter
+            //Closing filter = new Closing();
+            //// apply the filter
+            //filter.Apply(bm);
+
+            //// create filter
+            //ExtractChannel filter = new ExtractChannel(RGB.G);
+            //// apply the filter
+            //Bitmap channelImage = filter.Apply(bm);
+
+            // create and configure the filter
+            //FillHoles filter = new FillHoles( );
+            //filter.MaxHoleHeight = 20;
+            //filter.MaxHoleWidth  = 20;
+            //filter.CoupledSizeFiltering = false;
+            //// apply the filter
+            //Bitmap result = filter.Apply( bm );
+
+
+            //// create filter
+            //HorizontalRunLengthSmoothing hrls = new HorizontalRunLengthSmoothing(32);
+            //// apply the filter
+            //hrls.ApplyInPlace(bm);
+
+            //////////////////////////////////////////////////////////////////////////
+            // create filter
+            //Median filter = new Median();
+            //// apply the filter
+            //filter.ApplyInPlace(bm);
+            ///////////////////////////////////////////////////////////////////////////
+
+
+            // create filter
+            Sharpen filter = new Sharpen();
+            // apply the filter
+            filter.ApplyInPlace(bm);
+
+
+
+            commonSeq.Add(Grayscale.CommonAlgorithms.BT709); // 添加灰度滤镜
+            commonSeq.Add(new BradleyLocalThresholding());
+            //commonSeq.Add(new DifferenceEdgeDetector());
+            commonSeq.Add(new OtsuThreshold());   // 添加二值化滤镜
+
+            bm = commonSeq.Apply(bm);
+
+            UnCodebase un = new UnCodebase(bm);
+         //  un.bmpobj = un.GetPicValidByValue(un.bmpobj, 128);
             un.GrayByPixels(); //灰度处理
 
-            un.bmpobj.Save("image.jpg");
-            un.GetPicValidByValue(128, 4); //得到有效空间
+            un.bmpobj.Save(@"img/image.jpg");
+            //un.GetPicValidByValue(128, 4); //得到有效空间
             Bitmap[] pics =un.GetSplitPics(4, 1);     //分割
             string[] arr = new string[4];
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 4; i++)
             {
-                pics[i].Save("s" + i + ".jpg");
-                arr[i]= un.GetSingleBmpCode(pics[i], 128);   //得到代码串
+                sb.Append( imageToTxt(pics[i]));
+                pics[i].Save(@"img/"+Guid.NewGuid().ToString() + i + ".jpg");
+                //arr[i]= un.GetSingleBmpCode(pics[i], 128);   //得到代码串
             }
 
-            string picnum = getPicnums(arr);
+           // string picnum = getPicnums(arr);
+            string picnum = sb.ToString();
 
             return picnum;
+        }
+
+        public static string imageToTxt(Bitmap img)
+        {
+            //// create complex image
+            //ComplexImage complexImage = ComplexImage.FromBitmap(img);
+            //// do forward Fourier transformation
+            //complexImage.ForwardFourierTransform();
+            //// get complex image as bitmat
+            //Bitmap fourierImage = complexImage.ToBitmap();
+ 
+
+            ExhaustiveTemplateMatching templateMatching = new ExhaustiveTemplateMatching(0.8f);
+
+            Bitmap _3, _4, _5, _6, _7, _8;
+ 
+           Bitmap _32;
+           Bitmap _33;
+           Bitmap _34;
+           Bitmap _35;
+           Bitmap _36;
+           Bitmap _42;
+           Bitmap _43;
+           Bitmap _44;
+           Bitmap _45;
+           Bitmap _46;
+           Bitmap _47;
+           Bitmap _52;
+           Bitmap _53;
+           Bitmap _54;
+           Bitmap _55;
+           Bitmap _56;
+           Bitmap _57;
+           Bitmap _58;
+           Bitmap _62;
+           Bitmap _63;
+           Bitmap _64;
+           Bitmap _65;
+           Bitmap _66;
+           Bitmap _67;
+           Bitmap _68;
+           Bitmap _69;
+           Bitmap _610;
+           Bitmap _72;
+           Bitmap _73;
+           Bitmap _74;
+           Bitmap _75;
+           Bitmap _76;
+           Bitmap _77;
+           Bitmap _82;
+           Bitmap _83;
+           Bitmap _84;
+           Bitmap _85;
+           Bitmap _86;
+           Bitmap _87;
+
+           img = MakeGrayScale(img);
+            _3 = MakeGrayScale(XXX.Properties.Resources._3);
+            _4 =MakeGrayScale( XXX.Properties.Resources._4);//.Clone(new Rectangle(0, 0, 21, 14), PixelFormat.Format8bppIndexed);
+            _5 =MakeGrayScale( XXX.Properties.Resources._5);
+            _6 =MakeGrayScale( XXX.Properties.Resources._6);
+            _7 =MakeGrayScale( XXX.Properties.Resources._7);
+            _8 =MakeGrayScale( XXX.Properties.Resources._8);
+
+            _32 = MakeGrayScale(XXX.Properties.Resources._3__2_);
+            _33 = MakeGrayScale(XXX.Properties.Resources._3__3_);
+            _34 = MakeGrayScale(XXX.Properties.Resources._3__4_);
+            _35 = MakeGrayScale(XXX.Properties.Resources._3__5_);
+            _36 = MakeGrayScale(XXX.Properties.Resources._3__6_);
+            _42 = MakeGrayScale(XXX.Properties.Resources._4__2_);
+            _43 = MakeGrayScale(XXX.Properties.Resources._4__3_);
+            _44 = MakeGrayScale(XXX.Properties.Resources._4__4_);
+            _45 = MakeGrayScale(XXX.Properties.Resources._4__5_);
+            _46 = MakeGrayScale(XXX.Properties.Resources._4__6_);
+            _47 = MakeGrayScale(XXX.Properties.Resources._4__7_);
+            _52 = MakeGrayScale(XXX.Properties.Resources._5__2_);
+            _53 = MakeGrayScale(XXX.Properties.Resources._5__3_);
+            _54 = MakeGrayScale(XXX.Properties.Resources._5__4_);
+            _55 = MakeGrayScale(XXX.Properties.Resources._5__5_);
+            _56 = MakeGrayScale(XXX.Properties.Resources._5__6_);
+            _57 = MakeGrayScale(XXX.Properties.Resources._5__7_);
+            _58 = MakeGrayScale(XXX.Properties.Resources._5__8_);
+            _62 = MakeGrayScale(XXX.Properties.Resources._6__2_);
+            _63 = MakeGrayScale(XXX.Properties.Resources._6__3_);
+            _64 = MakeGrayScale(XXX.Properties.Resources._6__4_);
+            _65 = MakeGrayScale(XXX.Properties.Resources._6__5_);
+            _66 = MakeGrayScale(XXX.Properties.Resources._6__6_);
+            _67 = MakeGrayScale(XXX.Properties.Resources._6__7_);
+            _68 = MakeGrayScale(XXX.Properties.Resources._6__8_);
+            _69 = MakeGrayScale(XXX.Properties.Resources._6__9_);
+            _610 =MakeGrayScale(XXX.Properties.Resources._6__10_);
+            _72 = MakeGrayScale(XXX.Properties.Resources._7__2_);
+            _73 = MakeGrayScale(XXX.Properties.Resources._7__3_);
+            _74 = MakeGrayScale(XXX.Properties.Resources._7__4_);
+            _75 = MakeGrayScale(XXX.Properties.Resources._7__5_);
+            _76 = MakeGrayScale(XXX.Properties.Resources._7__6_);
+            _77 = MakeGrayScale(XXX.Properties.Resources._7__7_);
+            _82 = MakeGrayScale(XXX.Properties.Resources._8__2_);
+            _83 = MakeGrayScale(XXX.Properties.Resources._8__3_);
+            _84 = MakeGrayScale(XXX.Properties.Resources._8__4_);
+            _85 = MakeGrayScale(XXX.Properties.Resources._8__5_);
+            _86 = MakeGrayScale(XXX.Properties.Resources._8__6_);
+            _87 = MakeGrayScale(XXX.Properties.Resources._8__7_);
+                                                               
+                                                               
+            Number number = Number.NOT_RECOGNIZED;             
+
+            if (templateMatching.ProcessImage(img, _3).Length > 0||
+                templateMatching.ProcessImage(img, _32).Length > 0||
+                templateMatching.ProcessImage(img, _33).Length > 0||
+                templateMatching.ProcessImage(img, _34).Length > 0||
+                templateMatching.ProcessImage(img, _35).Length > 0||
+                templateMatching.ProcessImage(img, _36).Length > 0
+                )
+            {
+                number = Number.THREE;
+            }
+            else if (templateMatching.ProcessImage(img, _4).Length > 0||
+                templateMatching.ProcessImage(img, _42).Length > 0||
+                templateMatching.ProcessImage(img, _43).Length > 0||
+                templateMatching.ProcessImage(img, _44).Length > 0||
+                templateMatching.ProcessImage(img, _45).Length > 0||
+                templateMatching.ProcessImage(img, _46).Length > 0||
+                templateMatching.ProcessImage(img, _47).Length > 0)
+            {
+                number = Number.FOUR;
+            }
+            else if (templateMatching.ProcessImage(img, _5).Length > 0||
+                templateMatching.ProcessImage(img,_52).Length > 0||
+                templateMatching.ProcessImage(img,_53).Length > 0||
+                templateMatching.ProcessImage(img,_54).Length > 0||
+                templateMatching.ProcessImage(img,_55).Length > 0||
+                templateMatching.ProcessImage(img,_56).Length > 0||
+                templateMatching.ProcessImage(img,_57).Length > 0||
+                templateMatching.ProcessImage(img,_58).Length > 0)
+            {
+                number = Number.FIVE;
+            }
+            else if (templateMatching.ProcessImage(img, _6).Length > 0||
+                templateMatching.ProcessImage(img, _62 ).Length > 0||
+                templateMatching.ProcessImage(img, _63 ).Length > 0||
+                templateMatching.ProcessImage(img, _64 ).Length > 0||
+                templateMatching.ProcessImage(img, _65 ).Length > 0||
+                templateMatching.ProcessImage(img, _66 ).Length > 0||
+                templateMatching.ProcessImage(img, _67 ).Length > 0||
+                templateMatching.ProcessImage(img, _68 ).Length > 0||
+                templateMatching.ProcessImage(img, _69 ).Length > 0||
+                templateMatching.ProcessImage(img, _610).Length > 0)
+            {
+                number = Number.SIX;
+            }
+            else if (templateMatching.ProcessImage(img, _7).Length > 0||
+                templateMatching.ProcessImage(img, _72).Length > 0||
+                templateMatching.ProcessImage(img, _73).Length > 0||
+                templateMatching.ProcessImage(img, _74).Length > 0||
+                templateMatching.ProcessImage(img, _75).Length > 0||
+                templateMatching.ProcessImage(img, _76).Length > 0||
+                templateMatching.ProcessImage(img, _77).Length > 0)
+            {
+                number = Number.SEVEN;
+            }
+            else if (templateMatching.ProcessImage(img, _8).Length > 0||
+                templateMatching.ProcessImage(img,_82).Length > 0||
+                templateMatching.ProcessImage(img,_83).Length > 0||
+                templateMatching.ProcessImage(img,_84).Length > 0||
+                templateMatching.ProcessImage(img,_85).Length > 0||
+                templateMatching.ProcessImage(img,_86).Length > 0||
+                templateMatching.ProcessImage(img,_87).Length > 0)
+            {
+                number = Number.EIGHT;
+            }
+
+            return Convert.ToInt16(number).ToString();
+
+        }
+
+        /// <summary>
+        /// 将源图像灰度化，但是没有转化为8位灰度图像。
+        /// http://www.bobpowell.net/grayscale.htm
+        /// </summary>
+        /// <param name="original"> 源图像。 </param>
+        /// <returns> 灰度RGB图像。 </returns>
+        public static Bitmap MakeGrayScale(Bitmap original)
+        {
+            //create a blank bitmap the same size as original
+            Bitmap newBitmap = new Bitmap(original.Width, original.Height, PixelFormat.Format24bppRgb);
+
+            //get a graphics object from the new image
+            Graphics g = Graphics.FromImage(newBitmap);
+
+            //create the grayscale ColorMatrix
+            ColorMatrix colorMatrix = new ColorMatrix(
+                new float[][] 
+        {
+            new float[] { .3f, .3f, .3f, 0, 0 },
+            new float[] { .59f, .59f, .59f, 0, 0 },
+            new float[] { .11f, .11f, .11f, 0, 0 },
+            new float[] { 0, 0, 0, 1, 0 },
+            new float[] { 0, 0, 0, 0, 1 }
+        });
+            /* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+            ┌                          ┐
+            │  0.3   0.3   0.3   0   0 │
+            │ 0.59  0.59  0.59   0   0 │
+            │ 0.11  0.11  0.11   0   0 │
+            │    0     0     0   1   0 │
+            │    0     0     0   0   1 │
+            └                          ┘
+             * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+            //create some image attributes
+            ImageAttributes attributes = new ImageAttributes();
+
+            //set the color matrix attribute
+            attributes.SetColorMatrix(colorMatrix);
+
+            //draw the original image on the new image
+            //using the grayscale color matrix
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height),
+               0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
+
+            //dispose the Graphics object
+            g.Dispose();
+            return newBitmap;
+        }
+
+        public enum Number
+        {
+            NOT_RECOGNIZED = 0,
+            THREE=3,
+            FOUR=4,
+            FIVE=5,
+            SIX=6,
+            SEVEN=7,
+            EIGHT=8
+
         }
 
        private static string[] ArrayList = new string[]{

@@ -132,7 +132,7 @@ namespace Spike.Core.Net
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             Stream reader = response.GetResponseStream();
-            string strFileName = Common.ConvertDateTimeInt(DateTime.Now).ToString() + ".jpg";
+            string strFileName = @"img/"+Common.ConvertDateTimeInt(DateTime.Now).ToString() + ".jpg";
             FileStream writer = new FileStream(strFileName, FileMode.OpenOrCreate, FileAccess.Write);
             byte[] buff = new byte[1024];
             int c = 0; //实际读取的字节数
